@@ -22,7 +22,7 @@ function Menu({
   defaultSelectedValues,
   defaultOpenValues,
   defaultOpenAll,
-  getItemContainer,
+  getFloatingItemContainer,
 }) {
   const [collapsed, setCollapsed] = useState(false)
   const [valuePath, setValuePath] = useState(defaultSelectedValues)
@@ -53,7 +53,7 @@ function Menu({
         defaultOpenValues,
         collapsed,
         onMenuItemClick,
-        getItemContainer,
+        getFloatingItemContainer,
         bgColor: style.backgroundColor || '',
       }}
     >
@@ -138,7 +138,7 @@ Menu.propTypes = {
   /**
    * collapsed状态下，二级菜单弹框容器
    */
-  getItemContainer: PropTypes.func,
+  getFloatingItemContainer: PropTypes.func,
 }
 
 Menu.defaultProps = {

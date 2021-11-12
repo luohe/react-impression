@@ -35,7 +35,7 @@ function SubMenu({ value, parentValue, iconType, img, title, children }) {
     collapsed,
     defaultOpenAll,
     defaultOpenValues,
-    getItemContainer,
+    getFloatingItemContainer,
   } = useContext(MenuContext)
   const [folded, setFolded] = useState(
     !(defaultOpenAll || defaultOpenValues.includes(value))
@@ -43,7 +43,7 @@ function SubMenu({ value, parentValue, iconType, img, title, children }) {
   const [floating, setFloating] = useState(false)
   const [boundingRect, setBoundingRect] = useState({})
   const mouseTimeout = useRef()
-  const container = getItemContainer && getItemContainer()
+  const container = getFloatingItemContainer && getFloatingItemContainer()
 
   const getSubmenuContent = isFloating => {
     const contentClass = classnames({
